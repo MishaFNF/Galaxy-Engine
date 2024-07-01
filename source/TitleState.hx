@@ -613,11 +613,11 @@ class TitleState extends MusicBeatState
 	}
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
-	override function beatHit();
+	override function beatHit()
 	{
 		super.beatHit();
 
-		FlxG.camera.zoom += 0.038;
+		FlxG.camera.zoom += 0.030;
 
 		FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1200, {ease: FlxEase.quadOut});
 
