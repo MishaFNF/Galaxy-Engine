@@ -613,13 +613,12 @@ class TitleState extends MusicBeatState
 	}
 
 	override function beatHit();
-	
 	{
 		super.beatHit();
 
-		FlxG.camera.zoom += 0.045;
+		FlxG.camera.zoom += 0.030;
 
-		FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1800, {ease: FlxEase.quadOut});
+		FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1200, {ease: FlxEase.quadOut});
 		
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
