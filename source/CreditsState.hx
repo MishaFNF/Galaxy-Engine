@@ -81,6 +81,10 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['Galaxy Engine Team'],
+			['Misha_FNF',				'misha',			'Main programmer of Galaxy Engine',						'https://gamebanana.com/members/2964367',		'5B63FD'],
+			['Jordan Santiago',			'jor',				'Added beats in title',								'https://twitter.com/JordansTweetsYT',			'FF9300'],
+			[''],
 			['Psych Porting Team'],
 			['mcagabe19',				'lily',			'Head Porter of Psych Engine Mobile',						'https://youtube.com/@mcagabe19',		'FFE7C0'],
 			[''],
