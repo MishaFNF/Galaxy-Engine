@@ -32,15 +32,6 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
-
-	override function beatHit()
-	{
-		super.beatHit();
-
-		FlxG.camera.zoom += 0.025;
-
-		FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1800, {ease: FlxEase.quadOut});
-	}
 	
 	var optionShit:Array<String> = [
 		'story_mode',
