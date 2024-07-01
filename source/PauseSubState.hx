@@ -20,7 +20,7 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume Song', 'Restart Song', 'Difficulties', 'Exit to Menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -49,8 +49,8 @@ class PauseSubState extends MusicBeatSubstate
 				menuItemsOG.insert(3, 'Skip Time');
 			}
 			menuItemsOG.insert(3 + num, 'End Song');
-			menuItemsOG.insert(4 + num, 'Toggle Practice Mode');
-			menuItemsOG.insert(5 + num, 'Toggle Botplay');
+			menuItemsOG.insert(4 + num, 'Turn Practice Mode');
+			menuItemsOG.insert(5 + num, 'Turn Botplay');
 		}
 		if (mobile.MobileControls.enabled) menuItemsOG.insert(2, 'Chart Editor');
 		menuItems = menuItemsOG;
@@ -93,7 +93,7 @@ class PauseSubState extends MusicBeatSubstate
 		add(levelDifficulty);
 
 		var blueballedTxt:FlxText = new FlxText(20, 15 + 64, 0, "", 32);
-		blueballedTxt.text = "Blueballed: " + PlayState.deathCounter;
+		blueballedTxt.text = "Deaths: " + PlayState.deathCounter;
 		blueballedTxt.scrollFactor.set();
 		blueballedTxt.setFormat(Paths.font('vcr.ttf'), 32);
 		blueballedTxt.updateHitbox();
@@ -216,13 +216,13 @@ class PauseSubState extends MusicBeatSubstate
 
 			switch (daSelected)
 			{
-				case "Resume":
+				case "Resume Song":
 					close();
-				case 'Change Difficulty':
+				case 'Difficulties':
 					menuItems = difficultyChoices;
 					deleteSkipTimeText();
 					regenMenu();
-				case 'Toggle Practice Mode':
+				case 'Turn Practice Mode':
 					PlayState.instance.practiceMode = !PlayState.instance.practiceMode;
 					PlayState.changedDifficulty = true;
 					practiceText.visible = PlayState.instance.practiceMode;
@@ -251,13 +251,13 @@ class PauseSubState extends MusicBeatSubstate
 				case "End Song":
 					close();
 					PlayState.instance.finishSong(true);
-				case 'Toggle Botplay':
+				case 'Turn Botplay':
 					PlayState.instance.cpuControlled = !PlayState.instance.cpuControlled;
 					PlayState.changedDifficulty = true;
 					PlayState.instance.botplayTxt.visible = PlayState.instance.cpuControlled;
 					PlayState.instance.botplayTxt.alpha = 1;
 					PlayState.instance.botplaySine = 0;
-				case "Exit to menu":
+				case "Exit to Menu":
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 
