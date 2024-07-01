@@ -13,6 +13,7 @@
   
 * Misha_FNF - Programmer
 * JS Engine - Get code of beat in title and README.md
+* Jordan Santiago - Original Creator of JS Engine
 
 <details>
   <summary><h2>Psych Engine Credits</h2></summary>
