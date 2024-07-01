@@ -39,7 +39,7 @@ class MainMenuState extends MusicBeatState
 		#if MODS_ALLOWED 'mods', #end
 		//#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		#if !switch 'youtube', #end
+		//#if !switch 'youtube', #end
 		'options'
 	];
 
