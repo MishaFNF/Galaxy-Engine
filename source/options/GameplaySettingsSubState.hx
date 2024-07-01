@@ -118,8 +118,8 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			45);
 		option.displayFormat = '%vms';
 		option.scrollSpeed = 15;
-		option.minValue = 15;
-		option.maxValue = 45;
+		option.minValue = 1;
+		option.maxValue = 10000000;
 		addOption(option);
 
 		var option:Option = new Option('Good Hit Window',
