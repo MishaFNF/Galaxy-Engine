@@ -1,4 +1,4 @@
-9package;
+package;
 
 #if DISCORD_ALLOWED
 import Discord.DiscordClient;
