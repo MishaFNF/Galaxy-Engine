@@ -611,15 +611,12 @@ class TitleState extends MusicBeatState
 			textGroup.remove(textGroup.members[0], true);
 		}
 	}
+
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
 	override function beatHit()
 	{
 		super.beatHit();
-
-		FlxG.camera.zoom += 0.030;
-
-		FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1200, {ease: FlxEase.quadOut});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -631,6 +628,7 @@ class TitleState extends MusicBeatState
 			else
 				gfDance.animation.play('danceLeft');
 		}
+
 		if(!closedState) {
 			sickBeats++;
 			switch (sickBeats)
@@ -650,9 +648,9 @@ class TitleState extends MusicBeatState
 					#if PSYCH_WATERMARKS
 					addMoreText('Shadow Mario', 15);
 					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
+					addMoreText('Shubs', 15);
 					#else
-					addMoreText('Present');
+					addMoreText('present');
 					#end
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
@@ -663,86 +661,47 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Galaxy Engine by'], 15);
+					createCoolText(['Not associated', 'with'], -40);
 					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+					createCoolText(['In association', 'with'], -40);
 					#end
-				// credTextShit.visible = true;
-				case 7:
-					#if PSYCH_WATERMARKS
-					addMoreText('Misha_FNF', 15);
-					#else
-					addMoreText('Present');
-					#end
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
 				case 8:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
-				case 9:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Added Beats in Title by'], 15);
-					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
-				// credTextShit.visible = true;
-				case 10:
-					#if PSYCH_WATERMARKS
-					addMoreText('Jordan Santiago', 15);
-					#else
-					addMoreText('Present');
-					#end
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
-				case 11:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
-				case 12:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Check', 'my'], -40);
-					#else
-					createCoolText(['Check', 'my'], -40);
-					#end
-				case 13:
-					addMoreText('GameBanana Page', -40);
+					addMoreText('newgrounds', -40);
 					ngSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
-				case 14:
+				case 9:
 					deleteCoolText();
 					ngSpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
-				case 15:
+				case 10:
 					createCoolText([curWacky[0]]);
 				// credTextShit.visible = true;
-				case 16:
+				case 12:
 					addMoreText(curWacky[1]);
 				// credTextShit.text += '\nlmao';
-				case 17:
+				case 13:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
-				case 18:
-					addMoreText('Friday Night Funkin');
+				case 14:
+					addMoreText('Friday');
 				// credTextShit.visible = true;
-				case 19:
-					addMoreText('Galaxy Engine');
+				case 15:
+					addMoreText('Night');
 				// credTextShit.text += '\nNight';
-				case 20:
-					addMoreText('YIPEE :]'); // credTextShit.text += '\nFunkin';
+				case 16:
+					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
-				case 21:
+				case 17:
 					skipIntro();
 			}
 		}
 	}
+
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;
 	function skipIntro():Void
